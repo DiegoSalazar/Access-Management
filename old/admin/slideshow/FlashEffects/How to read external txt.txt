@@ -1,0 +1,21 @@
+Select frame with mouse click
+Push F9 while on frame 
+In actions window type the following minus the //
+
+//
+
+myData = new LoadVars();
+myData.onLoad = function(){
+   slide1_3_txt.text = this.myVariable;
+};
+myData.load("slide1_3.txt");
+
+
+//
+
+
+
+  **** Where it says "slide1_3.txt" is how and where you change the external file your linking too *****
+
+For now leave the text the way i've set it up it looks better then it being able to read from external text files
+Need to find a way to make the text appear this way in the text files that flash is reading so it looks nice like this

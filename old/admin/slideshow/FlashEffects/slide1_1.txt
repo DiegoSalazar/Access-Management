@@ -1,0 +1,1 @@
+myVariable= Monday - Thursday $20.00 Membership Fee $50.00 Door Fee $50.00 Upgrade fee after 5:00PM

@@ -1,0 +1,1 @@
+myVariable= Sunday Only: $120.00

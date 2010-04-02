@@ -1,0 +1,2 @@
+myVariable= Note: Saturday is for couples only. Select Single 
+males will be permitted on special occasions

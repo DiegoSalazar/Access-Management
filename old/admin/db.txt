@@ -1,0 +1,284 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jul 01, 2008 at 10:32 AM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `deeniesystem`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enroll_period`
+--
+
+CREATE TABLE `enroll_period` (
+  `id` int(6) NOT NULL auto_increment,
+  `mem_num` int(6) NOT NULL,
+  `start_date` varchar(10) NOT NULL,
+  `end_date` varchar(20) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=armscii8 AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `enroll_period`
+--
+
+INSERT INTO `enroll_period` (`id`, `mem_num`, `start_date`, `end_date`) VALUES
+(1, 1, '2008-06-26', '0'),
+(2, 2, '2008-06-26', '0'),
+(3, 3, '2008-06-26', '0'),
+(4, 4, '2008-06-26', '0'),
+(5, 5, '2008-06-26', '0'),
+(6, 6, '2008-06-26', '0'),
+(7, 7, '2008-06-26', '0'),
+(8, 8, '2008-06-26', '0'),
+(9, 9, '2008-06-26', '0'),
+(10, 10, '2008-06-26', '0'),
+(11, 11, '2008-06-26', '0'),
+(12, 12, '2008-06-26', '0'),
+(13, 13, '2008-06-28', '0'),
+(14, 14, '2008-06-28', '02/14'),
+(15, 15, '2008-06-29', '0'),
+(16, 16, '2008-06-29', '0'),
+(17, 17, '2008-06-29', '0'),
+(18, 18, '2008-07-01', '1999'),
+(19, 20, '2008-07-01', '2001'),
+(20, 21, '-2002', '-2001'),
+(21, 22, '0.00348605', '0.001743027888446215'),
+(22, 23, '7012008', '8012008'),
+(23, 24, '07-01-2008', '07-01-2009'),
+(24, 25, '07-01-2008', '07-02-2008');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `member_num` int(6) NOT NULL auto_increment,
+  `email` varchar(30) NOT NULL,
+  `mem_type` enum('single','couple') NOT NULL,
+  PRIMARY KEY  (`member_num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=armscii8 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`member_num`, `email`, `mem_type`) VALUES
+(1, 'Ya@whoa.com', 'single'),
+(2, '', 'single'),
+(3, 'what@oman.com', 'single'),
+(4, 'please@now.com', 'single'),
+(5, 'now@please.com', 'single'),
+(6, 'why@this.com', 'single'),
+(7, 'please@now.com', 'single'),
+(8, 'shit@fuck.cum', 'single'),
+(9, 'save@me.ocm', 'single'),
+(10, 'i@got.it', 'single'),
+(11, 'yes@whoa.com', 'single'),
+(12, 'Me@here.com', 'single'),
+(13, 'me@yo.com', 'couple'),
+(14, 'me@yo.com', 'couple'),
+(15, 'me@yo.com', 'couple'),
+(16, 'Yes@yo.com', 'couple'),
+(17, 'me@nuking.com', 'couple'),
+(18, 'woo@yahoo.com', 'single'),
+(19, '', 'single'),
+(20, 'a@g.com', 'single'),
+(21, 'ok@yea.com', 'single'),
+(22, 'ahh@fuck.com', 'single'),
+(23, 'ahh@fuck.me', 'single'),
+(24, 'rocks@ihope.com', 'single'),
+(25, 'irule@yourmom.com', 'single');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_enter`
+--
+
+CREATE TABLE `member_enter` (
+  `id` int(11) NOT NULL auto_increment,
+  `mem_num` int(6) NOT NULL COMMENT 'foreign key',
+  `date_in` varchar(10) NOT NULL,
+  `time_in` varchar(10) NOT NULL,
+  `staff` varchar(20) NOT NULL COMMENT 'employee that checked the member in',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=armscii8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `member_enter`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_info`
+--
+
+CREATE TABLE `member_info` (
+  `id` int(6) NOT NULL auto_increment,
+  `mem_num` int(6) NOT NULL COMMENT 'foreign key',
+  `fname1` varchar(20) NOT NULL,
+  `lname1` varchar(20) NOT NULL,
+  `fname2` varchar(20) default 'none',
+  `lname2` varchar(20) default 'none',
+  `gender` varchar(6) NOT NULL,
+  `bday` varchar(10) NOT NULL,
+  `anniv` varchar(15) default 'n/a',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=armscii8 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `member_info`
+--
+
+INSERT INTO `member_info` (`id`, `mem_num`, `fname1`, `lname1`, `fname2`, `lname2`, `gender`, `bday`, `anniv`) VALUES
+(1, 1, 'First', 'NewTest', 'none', 'none', '', '02/05/1998', ''),
+(2, 2, '', '', 'none', 'none', '', 'MM/DD/YYYY', ''),
+(3, 3, 'dude', 'whoa', 'none', 'none', '', '11/12/1999', ''),
+(4, 4, 'this', 'time', 'none', 'none', 'male', '02/14/1986', ''),
+(5, 5, 'what', 'about', 'none', 'none', 'male', '11/11/1946', ''),
+(6, 6, 'ugh', 'fuck', 'none', 'none', 'male', '11/11/1959', ''),
+(7, 7, 'this', 'time', 'none', 'none', 'male', '06/14/1996', ''),
+(8, 8, 'argh', 'fuck', 'none', 'none', 'male', '66/66/6666', ''),
+(9, 9, 'omg', 'please', 'none', 'none', 'male', '44/44/4965', ''),
+(10, 10, 'i', 'think', 'none', 'none', 'male', '48/49/4694', ''),
+(11, 11, 'new', 'thing', 'none', 'none', 'male', 'MM/DD/YYYY', ''),
+(12, 12, 'Thanks', 'God', 'none', 'none', 'male', '33/33/3331', ''),
+(13, 13, 'Emily', 'Barrett', 'Jessica', 'Weill', '', '', ''),
+(14, 14, 'Emily', 'Barrett', 'Jessica', 'Weill', '', '', ''),
+(15, 15, 'test', 'female', '', '', 'female', '', ''),
+(16, 16, 'this', 'Female', 'none', 'none', 'female', '12/22/3333', ''),
+(17, 17, 'me', 'nuking', 'his', 'wife', 'couple', '12/44/44', '22/23/55'),
+(18, 18, 'testing', 'end_date', 'none', 'none', 'male', '02/14/78', 'n/a'),
+(19, 19, '', '', 'none', 'none', 'male', 'MM/DD/YYYY', 'n/a'),
+(20, 20, 'testing', 'more time', 'none', 'none', 'male', '12/12/1222', 'n/a'),
+(21, 21, 'another', 'time test', 'none', 'none', 'male', '12/22/3333', 'n/a'),
+(22, 22, 'time', 'test4', 'none', 'none', 'male', '12/44/44', 'n/a'),
+(23, 23, 'test', 'time5', 'none', 'none', 'male', 'MM/DD/YYYY', 'n/a'),
+(24, 24, 'this', 'time', 'none', 'none', 'male', 'MM/DD/YYYY', 'n/a'),
+(25, 25, 'yes', 'timeworks', 'none', 'none', 'male', 'MM/DD/YYYY', 'n/a');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_score`
+--
+
+CREATE TABLE `member_score` (
+  `id` int(6) NOT NULL auto_increment,
+  `mem_num` int(6) NOT NULL COMMENT 'foreign key',
+  `nudity` tinytext NOT NULL,
+  `sex_act` tinytext NOT NULL,
+  `swinging` tinytext NOT NULL,
+  `police` tinytext NOT NULL,
+  `agree` tinytext NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=armscii8 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `member_score`
+--
+
+INSERT INTO `member_score` (`id`, `mem_num`, `nudity`, `sex_act`, `swinging`, `police`, `agree`) VALUES
+(1, 1, '1', '1', '1', '1', '1'),
+(2, 2, '1', '1', '1', '1', '1'),
+(3, 3, '1', '1', '1', '1', '1'),
+(4, 4, '1', '1', '1', '1', '1'),
+(5, 5, '1', '1', '1', '1', '1'),
+(6, 6, '1', '1', '1', '1', '1'),
+(7, 7, '1', '1', '1', '1', '1'),
+(8, 8, '2', '2', '2', '2', '1'),
+(9, 9, '1', '1', '1', '1', '1'),
+(10, 10, '1', '1', '1', '1', '1'),
+(11, 11, '1', '1', '1', '1', '1'),
+(12, 12, '1', '1', '1', '1', '1'),
+(13, 13, '', '', '', '', ''),
+(14, 14, '1', '1', '', '1', '1'),
+(15, 15, '1', '1', '1', '1', '1'),
+(16, 16, '1', '1', '1', '1', '1'),
+(17, 17, '1', '1', '1', '1', '1'),
+(18, 18, '1', '1', '1', '1', '1'),
+(19, 19, '1', '1', '1', '1', '1'),
+(20, 20, '1', '1', '1', '1', '1'),
+(21, 21, '1', '1', '1', '1', '1'),
+(22, 22, '1', '1', '1', '1', '1'),
+(23, 23, '1', '1', '1', '1', '1'),
+(24, 24, '1', '1', '1', '1', '1'),
+(25, 25, '1', '1', '1', '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mem_price`
+--
+
+CREATE TABLE `mem_price` (
+  `id` int(11) NOT NULL auto_increment,
+  `mem_num` int(6) NOT NULL COMMENT 'foreign key',
+  `mem_length` varchar(15) NOT NULL COMMENT 'length of membership',
+  `cost` varchar(6) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=armscii8 AUTO_INCREMENT=23 ;
+
+--
+-- Dumping data for table `mem_price`
+--
+
+INSERT INTO `mem_price` (`id`, `mem_num`, `mem_length`, `cost`) VALUES
+(1, 1, 'One Day', '0'),
+(2, 2, 'One Day', '0'),
+(3, 3, 'One Month', '0'),
+(4, 4, 'One Day', '0'),
+(5, 5, 'One Month', '0'),
+(6, 6, 'One Year', '0'),
+(7, 7, 'One Year', '0'),
+(8, 8, 'One Year', '0'),
+(9, 9, 'One Month', ''),
+(10, 10, 'One Day', ''),
+(11, 11, 'One Day', '120'),
+(12, 12, 'One Year', '5000'),
+(13, 15, '1', ''),
+(14, 16, 'One Day', '5'),
+(15, 17, 'One Year VIP', '3000'),
+(16, 18, 'One Month', '280'),
+(17, 20, 'One Year', '5000'),
+(18, 21, 'One Month', '280'),
+(19, 22, 'One Day', '120'),
+(20, 23, 'One Month', '280'),
+(21, 24, 'One Year', '5000'),
+(22, 25, 'One Day', '120');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(6) NOT NULL auto_increment,
+  `type` enum('admin','user') NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `hashed_pw` varchar(128) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=armscii8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `type`, `username`, `hashed_pw`) VALUES
+(5, 'admin', 'diego', 'f865b53623b121fd34ee5426c792e5c33af8c227'),
+(6, 'admin', 'marja', 'f865b53623b121fd34ee5426c792e5c33af8c227');

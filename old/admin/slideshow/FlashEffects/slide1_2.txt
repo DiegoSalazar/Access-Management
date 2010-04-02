@@ -1,0 +1,1 @@
+myVariable= Friday and Saturday Now Only: $120.00

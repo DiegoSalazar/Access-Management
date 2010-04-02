@@ -1,0 +1,10 @@
+myData = new LoadVars();
+myData.onLoad = function(){
+   myText_txt.text = this.content;
+};
+myData.load("example1.txt");
+
+
+
+Content = What the begining of the text file reads
+myText_txt.text reads the instance name you input

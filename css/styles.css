@@ -1,0 +1,411 @@
+@charset "utf-8";
+
+/* Club Login */
+#login, #authenticated, #authenticated h2 span, #logout.false { display:none }
+#login.false { display:block }
+
+#login { width:30%; margin:0 auto; text-align:center }
+#login input { 
+	padding:3px 7px;
+	margin:7px;
+	color:#5f5f5f;
+	text-align:center;
+	border:2px solid #a30414; 
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px;
+	font:22px normal Arial, Geneva, sans-serif 
+}
+#login input.text { width:150px; }
+#login #login-btn { cursor:pointer; border:3px solid #000; color:#c00; background:#533 }
+#login #login-btn:hover { border-color:#a33; color:#f55}
+#login-head { font-weight:normal; font-size:26px; padding:7px 0 0 0; line-height:.7 }
+
+#logout { 
+	padding:3px 7px; 
+	border:2px solid #dadada; 
+	font-weight:bold; 
+	color:#818181; 
+	cursor:pointer; 
+	position:absolute; 
+	top:17px;
+	right:20px
+}
+#logout:hover { background:#efefef; border-color:#818181 }
+
+/* checkin box */
+#checkin_thickbox { display:none }
+.close { text-decoration:none; position:absolute; top:8px; right:7%; font:18px bold "Century Gothic", sans-serif }
+
+#TB_window { padding:5px; overflow:hidden }
+#TB_ajaxContent fieldset { 
+	margin:17px 3px 14px 3px;
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px;
+}
+#TB_ajaxContent legend, #TB_ajaxContent label, #staff_list { 
+	color:#444; 
+	font:18px bold "Trebuchet MS", Arial, Helvetica, sans-serif 
+}
+#primary_fields legend { color:#494 }
+#discount_fields legend { color:#69F }
+#TB_ajaxContent legend { margin-left:7px }
+#TB_ajaxContent legend, #member_num-field { 
+	font-size:22px; 
+	border:1px solid #525252; 
+	padding:4px;
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px 
+}
+#controls { height:3px }
+#controls a.checkin { 
+	position:absolute;
+	top:38px; 
+	right:110px;  
+	padding:3px 7px;
+	font-size:14px;
+}
+#form-checkin-btn:link { color:#00A31C; }
+#updating { position:absolute; top:43px; right:110px; display:none }
+
+#member_num-field, #staff_list { width:80px; color:#444 } 
+#staff_list { 
+	padding:4px; 
+	position:absolute; 
+	top:-26px; 
+	cursor:pointer;
+	color:#69F;
+	border:1px solid #525252; 
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px
+}
+#sl_div { position:relative }
+#primary_fields { padding-bottom:14px }
+#primary_fields div { display:inline-block; margin:0 7px }
+#discounts_list { 
+	list-style:none; 
+	margin:17px 0 17px 17px; 
+	color:#980021;
+	width:91.5%;
+	font:12px normal Arial, Helvetica, sans-serif 
+}
+#discounts_list li { cursor:pointer; padding:4px 0 4px 7px; margin:5px 0; border:1px solid #efefef  }
+#discounts_list li:hover, #discounts_list li.selected { background:#FFEAEB }
+
+#discounts_list li label { 
+	cursor:pointer; 
+	display:inline-block; 
+	padding-right:10px; 
+	font-size:14px; 
+	float:right; 
+	width:91%;
+	text-align:right
+}
+#discounts_list li input { cursor:pointer; margin-top:3px }
+#discounts_list label { color:#A43 }
+.go-btn { 
+	cursor:pointer; 
+	padding:5px 21px; 
+	font-size:22px; 
+	padding:7px; 
+	width:70px;
+	margin:2px -10px 7px 82px;
+	border:2px solid #494; 
+	background:#aaffaa; 
+	color:#494; 
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px
+}
+.go-btn:hover { border:2px solid #644; color:#644 }	
+
+p.status-text { color:#525252; font:18px normal Arial, Helvetica, sans-serif }
+#finish { margin:2% 0 0 40% }
+
+/* member info thickbox */
+#member_info_thickbox, #member_form, #member_loader { display:none }
+#member_loader { position:absolute; top:50%; left:30% }
+#member_form fieldset { padding:10px }
+#member_form fieldset input, #member_form fieldset select { 
+width:84%; 
+padding:3px; 
+color:#333; 
+font-size:14px; 
+border:1px solid; 
+-moz-border-radius:10px; 
+-webkit-border-radius:10px
+}
+#member_form fieldset div { display:inline-block; width:45%; padding:3px}
+#member_form fieldset div.short { width:20% }
+#member_form fieldset label { display:block; font:12px normal Arial, Geneva, sans-serif }
+#history-fields { height:150px }
+#history-fields table { width:100%; text-align:center }
+#history-fields table th { background:#bababa; color:#fff; padding:7px }
+#history-fields div#history { height:70%; width:98%; overflow:auto }
+#history-fields #history table { text-align:center;  color:#333 }
+#history-fields #history table th { display:none }
+#history-fields #history .history_table td { padding:2px }
+#history-fields #history .history_table tr.even { background:#efefef }
+#history-fields .date-head { width:120px }
+#history-fields .total-head, #history-fields .paid-head { width:50px }
+#history-fields .discounts-head { width:90px }
+#update { 
+	position:absolute;
+	top:38px; 
+	right:30px; 
+	cursor:pointer;
+	padding:2px 7px;
+	border:2px solid #00A31C; 
+	background:#5EEC76; 
+	color:#00A31C;
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px
+}
+
+/* back end styles */
+#club { 
+	border:2px solid #dadada; 
+	text-align:left; 
+	background:#fff; 
+	padding:14px; 
+	margin:35px auto; 
+	position:relative;
+	color:#444;
+	width:90%;
+	-moz-border-radius:30px; 
+	-webkit-border-radius:20px
+}
+#club table a:link, #club table a:visited { text-decoration:none; color:#c10120 }
+#club table a:hover, #club table a:active { color:#32d445 }
+
+#loader { position:absolute; top:3%; left:40%; display:none }
+
+#checkin_form h2 { padding:14px 0; line-height:1.3; text-align:center; font-size:26px; color:#06F }
+#club h2 { margin:0 0 14px 0 }
+div#clubContainer div#footer { text-align:center; margin:0 auto }
+
+#buttons { overflow:hidden }
+#buttons form { width:17%; float:left }
+
+#msg_box { 
+	margin:27px 10px 0 0; 
+	font-size:14px; 
+	color:#900; 
+	font-size:12px; 
+	width:29.5%; 
+	max-height:75.1%;
+	overflow:auto;
+	position:absolute; 
+	right:21px; 
+	top:11.4% 
+}
+#msg_box .success { padding:3px 0 3px 10px; display:none; border-bottom:2px solid #fff; background:#efefef}
+.timestamp { display:block; color:#525252; padding:0; margin:1px 0 -1px -5px; font:11px normal "Courier New", Courier, monospace }
+
+#main_buttons { padding:7px 14px; display:inline-block }
+#main_buttons .input-div { display:inline-block; margin:0 10px 0 0 }
+a.main-btn { 
+	display:inline-block; 
+	text-decoration:none; 
+	font-size:18px; 
+	padding:7px; 
+	border:2px solid #EEB3C0; 
+	background:#FEE1F4; 
+	color:#EEB3C0; 
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px
+}
+a.main-btn:hover { border:2px solid #980021; color:#980021; background:#EEB3C0}
+a.checkin { background:#5EEC76; border-color:#00A31C; color:#00A31C}
+a.checkin:hover, #update:hover { background:#00A31C; border-color:#004E0E; color:#004E0E}
+
+#search-div, #search-div div { display:inline-block; } 
+#search-div input { 
+padding:3px; 
+color:#666;
+border:1px solid #525252;
+-moz-border-radius:10px;
+font:22px normal "Century Gothic", Arial, Geneva, sans-serif
+}
+#search-div input.text { width:180px }
+
+#box_wrapper { width:70%; margin:0 0 14px 7px; padding:7px }
+
+.box { 
+	border:2px solid #EE6381; 
+	display:inline-block; 
+	width:264px;
+	margin:0 7px 12px 0;
+	font-size:12px;
+	padding-bottom:4px;
+	-moz-border-radius:10px; 
+	-webkit-border-radius:10px
+}
+.box .scroll { overflow:auto; width:264px; height:143px }
+.box .btn { font-size:10px; margin:0 3px 0 0  }
+.box h3 { 
+	padding:3px 7px; 
+	color:#EEB3C0; 
+	background:#980021;
+	-moz-border-radius-topleft:6px;
+	-moz-border-radius-topright:6px;
+	-webkit-border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+}
+.box input, .box select { color:#6C0800 }
+.box table, .prices_table, table.confirm_table { color:#6C0800; width:292px }
+.box table th, .prices_table th, table.confirm_table th { padding:3px 7px; background:#EEB3C0; font-size:10px; color:#692030 }
+.box table td, .prices_table td, table.confirm_table td { padding:2px 0 2px 12px }
+.box table tr.even { background:#EEB3C0}
+
+table#members_table { margin:-5px; width:252px; font-size:12px }
+table#members_table th { padding:3px 10px }
+table#members_table td { padding:2px 2px 2px 10px; border-bottom:2px solid #fff; border-right:1px solid #fff }
+#members_table .id { width:50px }
+td.del-col, td.checkin-col { width:20px; padding:3px 7px }
+
+#memberships { overflow:hidden; margin-bottom:-6px }
+#memberships .scroll { overflow:hidden; }
+#memberships_table { padding:0; margin-top:-2px; width:266px}
+#memberships #memberships_table th { padding:4px 7px 4px 7px; font-size:10px  }
+#memberships_table td { padding:1px 7px; font-size:10px; border-bottom:2px solid #fff; border-right:1px solid #fff }
+#memberships_table td input { font-size:10px }
+
+#memberships_table select { font-size:10px }
+
+#door_fees { height:200px; overflow:hidden }
+#door_fees .scroll { height:177px; overflow:hidden; background:none }
+#door_fees_table { margin-top:-2px; width:266px;background:none }
+#door_fees_table th { padding-left:10px }
+#door_fees_table td { font-size:11px; border-bottom:2px solid #fff; border-right:1px solid #fff }
+
+#staff { height:202px; width:264px; float:left; margin-right:12px; padding-bottom:2px}
+#staff .scroll { height:154px; width:264px }
+#staff_table { width:247px }
+#staff_table td { background:none; padding:7px }
+#btns-bar {
+	margin:0 0 0 0;
+	-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-bottomright:10px;
+	-webkit-border-bottom-left-radius:10px;
+	-webkit-border-bottom-radius:10px;
+}
+#user-field, #pw-field { padding:2px 0; width:40px } 
+#role-select { font-size:10px; padding:2px; color:#333 }
+
+
+#hours { overflow:hidden }
+#hours .scroll { height:173px; overflow:hidden }
+#hours_table { width:266px }
+#hours_table td { font-size:10px; padding:2px 0 2px 5px }
+#hours_table select { font-size:11px; display:inline-block; width:40px; padding:0 }
+
+#discounts { float:left; margin-right:12px }
+#discounts .scroll { height:138px }
+#discounts_table { width:250px; margin:-3px 0 0 -3px }
+#discounts_table th { padding:5px 0 5px 7px }
+#discounts_table td { font-size:10px; padding:4px 0 4px 10px }
+#discounts_table .del { margin:0 7px 0 0 }
+#discount-form-bar { padding:2px 0 0 5px }
+#discount-form-bar #amount { width:22px }
+#discount-form-bar .left input { margin:0 5px 0 0 }
+#discount-form-bar .mid label { display:block;  }
+#discount-form-bar .mid input { width:138px; margin:0 -15px 0 0  }
+#discount-form-bar .mid-right label { display:inline-block; width:33px; text-align:right }
+
+.btns-bar { padding:4px 0 3px 5px; width:98%; background:none}
+.btns-bar, .btns-bar input { font-size:10px; margin-right:7px  }
+.btns-bar .left, .btns-bar .mid, .btns-bar .mid-right, .btns-bar .right{ display:inline-block }
+
+a.edit-staff:link, a.edit-staff:visited { 
+	text-decoration:none; 
+	color:#b98; 
+	display:inline-block; 
+	background:#fff; 
+	border:2px solid #dcdcdc; 
+	padding:2px 7px 
+}
+a.edit-staff:hover, a.edit-staff:active { border-color:#818181; color:#228; }
+
+.box input.del, .box input.edit-btn, .box input.add-btn { 
+	color:#EEB3C0; 
+font-size:10px;
+	font-weight:bold; 
+	background:#EE6381; 
+	cursor:pointer;
+	border-top-color:#fff;
+	border-left-color:#fff;
+	border-bottom-color:#000;
+	border-right-color:#666;
+	-moz-border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-top:1px;
+	-webkit-border-top:1px;
+}
+.box input.del:hover, .box input.edit-btn:hover, .box input.add-btn:hover { 
+	color:#EE6381;
+	background:#692030;
+	border-top-color:#000;
+	border-left-color:#666;
+	border-bottom-color:#fff;
+	border-right-color:#fff
+}
+
+.box input.edit-btn, .box input.add-btn { background:#fff; border-color:#00A31C; color:#666}
+.box input.edit-btn:hover, .box input.add-btn:hover:hover { background:#00A31C; border-color:#004E0E; color:#004E0E}
+
+.edit-btn { font-size:10px; margin-right:11px }
+.num-input { font-size:10px; width:35px; text-align:center }
+.box_opts { float:right; margin:-22px 7px 0 0 }
+
+.highlight { background:#5EEC76 }
+span.caption { font-size:12px;  }
+
+.no_display { display:none }
+#small_opts { float:right; width:14%; padding-top:5px; }
+.notice { font-size:10px; padding:0; margin:0 0 0 4px; line-height:12px; color:#444 }
+
+/* front end styles */
+
+#club_rules { border:1px solid #818181; padding:3px; width:575px; display:block; line-height:1.4 }
+
+.center { text-align:center }
+
+#prices_list { margin:14px 0 7px 0 }
+#mem_select { margin:14px 7px; padding:3px 7px; width:200px; font-weight:bold }
+#prices_list table, table.confirm_table, #members_table { width:400px; padding:3px; margin:7px 0 14px 0 }
+#prices_list table th, table.confirm_table th, #members_table th { padding:7px 14px }
+#prices_list table td, table.confirm_table td, #members_table td { padding:2px 0 2px 21px }
+.prices_table { border:5px solid #efefef }
+#prices_list .prices_table th, #prices_list .prices_table td { text-align:center }
+#prices_list .prices_table td { padding:4px 7px }
+span.dcell { display:inline-block; width:80px; padding:0 }
+
+#confirm_page { text-align:center }
+#confirm_page h3 { font-size:22px; margin:14px 0 7px 0 }
+#confirm_page form { margin:7px 0 14px 0 }
+#confirm_page form input.join { 
+	width:40%; 
+	height:35px; 
+	padding:0 0 4px 0; 
+	font-size:18px;
+
+	cursor:pointer;
+	letter-spacing:2px; 
+	border:3px solid #ef2334
+}
+#confirm_page form input.join:hover { background:#f99; border:3px solid #333 }
+table.confirm_table { margin:7px auto }
+
+#renew_opts label { font-weight:normal; font-size:12px }
+
+#welcome_page h2 { padding:14px }
+
+div.msg, .msg_wrapper { text-align:center; padding:7px; color:#C00; font-size:16px; font-weight:bold }
+.msg_wrapper { width:565px; }
+
+ul.input_list li { float:left; width:40% }
+li.inlineList { clear:right }
+#prices_list { display:block; clear:both }
+
+li.block { display:block; clear:both; margin-right:-42.5% }
+
+#welcome_page { margin-bottom:28px }

@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+#card {
+	height:130pt;
+	width:225pt;
+	position:relative;
+	border:solid;
+	text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+	#card h3 {
+		font-variant:small-caps;
+	}
+	
+#topright {
+	float:right;
+	clear:left;
+	margin-top:10pt;
+	margin-right:5pt;
+	font-size:12px;
+}
+	#topright span {
+		text-decoration:underline;
+		margin-right:5pt;	
+	}
+#title {
+	position:absolute;
+	top:30pt;
+	left:25pt;
+	line-height:0.1;
+}
+	#title h4 {
+		font-variant:small-caps;
+	}
+#bottom {
+	text-align:left;
+	position:absolute;
+	bottom:10pt;
+	float:left;
+	padding-left:10pt;
+	font-size:12px;
+}
+	#bottom span {
+		text-decoration:underline;
+		margin-right:10pt;
+	}
+
+#topright span.normal, #bottom span.normal {
+	text-decoration:none;
+}
+
+#topright span.bold, #bottom span.bold {
+	font-weight:bolder;
+}

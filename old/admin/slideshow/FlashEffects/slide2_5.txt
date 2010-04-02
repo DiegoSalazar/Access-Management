@@ -1,0 +1,1 @@
+myVariable= $3,000.00 One Year VIP Charter.
